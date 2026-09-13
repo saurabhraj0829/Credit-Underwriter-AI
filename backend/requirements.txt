@@ -1,0 +1,14 @@
+fastapi
+uvicorn[standard]
+pydantic
+pydantic-settings
+python-multipart
+sqlalchemy
+psycopg2-binary
+python-dotenv
+
+scikit-learn
+
+langchain
+langchain-groq
+chromadb
