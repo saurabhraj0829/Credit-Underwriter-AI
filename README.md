@@ -156,8 +156,9 @@ Audit Agent          Agent            Agent
 - The diagram represents the high-level logical architecture. Actual execution and data flow are implemented in the backend code.
 ```
 
-6. Project Structure
+## Project Structure
 
+```
 Credit-Underwriter-AI/
 ├── backend/
 │   ├── ai/
@@ -182,9 +183,9 @@ Credit-Underwriter-AI/
 ├── decision_governance_test.py
 ├── .gitignore
 └── README.md
+```
 
 7. Local Setup
-
 7.1 Clone the Repository
 git clone https://github.com/saurabhraj0829/Credit-Underwriter-AI.git
 cd Credit-Underwriter-AI
