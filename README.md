@@ -297,7 +297,7 @@ Saurabh Raj
 
 GitHub: saurabhraj0829
 
-## 📸 Application Screenshots
+## Application Screenshots
 
 ### Dashboard
 ![Dashboard](https://raw.githubusercontent.com/saurabhraj0829/Credit-Underwriter-AI/main/docs/screenshots/dashboard.png)
@@ -313,3 +313,4 @@ GitHub: saurabhraj0829
 
 ### Decision Queue
 ![Decision Queue](https://raw.githubusercontent.com/saurabhraj0829/Credit-Underwriter-AI/main/docs/screenshots/decision-queue.png)
+
