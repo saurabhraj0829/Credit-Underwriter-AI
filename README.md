@@ -289,3 +289,20 @@ Enhanced RAG knowledge-base management
 Saurabh Raj
 
 GitHub: saurabhraj0829
+
+## 📸 Application Screenshots
+
+### Dashboard
+![Dashboard](docs/screenshots/dashboard.png)
+
+### Risk Center
+![Risk Center](docs/screenshots/risk-center.png)
+
+### Fraud Center
+![Fraud Center](docs/screenshots/fraud-center.png)
+
+### AI Copilot
+![AI Copilot](docs/screenshots/ai-copilot.png)
+
+### Decision Queue
+![Decision Queue](docs/screenshots/decision-queue.png)
