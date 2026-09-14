@@ -154,8 +154,10 @@ Audit Agent          Agent            Agent
 - The Agentic AI Copilot is the **only component in the system that calls an LLM**. It provides context-aware assistance through LangChain tool-calling, 9 read-only application-data tools, and RAG retrieval over a ChromaDB vector store of 8 policy documents.
 - The final lending decision is handled by the Loan Decision Agent and is not independently made by the AI Copilot — the Copilot only explains and analyzes, it never approves, rejects, or overrides a decision.
 - The diagram represents the high-level logical architecture. Actual execution and data flow are implemented in the backend code.
+```
 
 6. Project Structure
+
 Credit-Underwriter-AI/
 ├── backend/
 │   ├── ai/
@@ -182,6 +184,7 @@ Credit-Underwriter-AI/
 └── README.md
 
 7. Local Setup
+
 7.1 Clone the Repository
 git clone https://github.com/saurabhraj0829/Credit-Underwriter-AI.git
 cd Credit-Underwriter-AI
@@ -241,11 +244,13 @@ Decision governance
 Run the applicable tests or scripts according to their implementation and local environment configuration.
 
 10. Security Notes
+
 Do not upload real Aadhaar, PAN, salary-slip, bank-statement, or other personally identifiable documents.
 Use synthetic or anonymized documents for development and demonstrations.
 Keep .env files, API keys, credentials, and database secrets out of version control.
 Review access controls before deploying the application.
 Use secure document storage and appropriate access restrictions in production.
+
 11. Current Scope
 
 This project demonstrates an integrated credit-underwriting workflow with:
@@ -273,7 +278,9 @@ Model validation and monitoring
 Regulatory and legal review
 Human-in-the-loop approval controls
 Production-grade observability and deployment
+
 12. Future Enhancements
+
 Docker and Docker Compose deployment
 Role-based access control
 Advanced model monitoring
