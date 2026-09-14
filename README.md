@@ -293,16 +293,16 @@ GitHub: saurabhraj0829
 ## 📸 Application Screenshots
 
 ### Dashboard
-![Dashboard](./docs/screenshots/dashboard.png)
+![Dashboard](https://raw.githubusercontent.com/saurabhraj0829/Credit-Underwriter-AI/main/docs/screenshots/dashboard.png)
 
 ### Risk Center
-![Risk Center](./docs/screenshots/risk-center.png)
+![Risk Center](https://raw.githubusercontent.com/saurabhraj0829/Credit-Underwriter-AI/main/docs/screenshots/risk-center.png)
 
 ### Fraud Center
-![Fraud Center](./docs/screenshots/fraud-center.png)
+![Fraud Center](https://raw.githubusercontent.com/saurabhraj0829/Credit-Underwriter-AI/main/docs/screenshots/fraud-center.png)
 
 ### AI Copilot
-![AI Copilot](./docs/screenshots/ai-copilot.png)
+![AI Copilot](https://raw.githubusercontent.com/saurabhraj0829/Credit-Underwriter-AI/main/docs/screenshots/ai-copilot.png)
 
 ### Decision Queue
-![Decision Queue](./docs/screenshots/decision-queue.png)
+![Decision Queue](https://raw.githubusercontent.com/saurabhraj0829/Credit-Underwriter-AI/main/docs/screenshots/decision-queue.png)
