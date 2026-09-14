@@ -293,16 +293,16 @@ GitHub: saurabhraj0829
 ## 📸 Application Screenshots
 
 ### Dashboard
-![Dashboard](docs/screenshots/dashboard.png)
+![Dashboard](./docs/screenshots/dashboard.png)
 
 ### Risk Center
-![Risk Center](docs/screenshots/risk-center.png)
+![Risk Center](./docs/screenshots/risk-center.png)
 
 ### Fraud Center
-![Fraud Center](docs/screenshots/fraud-center.png)
+![Fraud Center](./docs/screenshots/fraud-center.png)
 
 ### AI Copilot
-![AI Copilot](docs/screenshots/ai-copilot.png)
+![AI Copilot](./docs/screenshots/ai-copilot.png)
 
 ### Decision Queue
-![Decision Queue](docs/screenshots/decision-queue.png)
+![Decision Queue](./docs/screenshots/decision-queue.png)
