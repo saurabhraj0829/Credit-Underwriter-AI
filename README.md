@@ -102,68 +102,58 @@ It does not independently make the final lending decision. The underwriting deci
 ## 5. High-Level Architecture
 
 ```text
-                    React + TypeScript Frontend
-                                 |
-                                 v
-                            FastAPI APIs
-                                 |
-                                 v
-                   Underwriting Coordinator Agent
-                                 |
-       +-------------------------+-------------------------+
-       |                         |                         |
-       v                         v                         v
-Document Processing       Risk & Decision            Agentic AI
-& Verification            Assessment                  Copilot
-       |                         |                         |
-       |                         |              +----------+----------+
-       |                         |              |          |          |
-       |                         |              v          v          v
-       |                         |          LLM Reasoning Tool     RAG
-       |                         |                         Calling    |
-       |                         |                            |       v
-       |                         |                            |   ChromaDB
-       |                         |                            |
-       |                         |                    Application Data
-       |                         |                         Tools
-       |                         |
-       |                 +-------+--------+--------+--------+
-       |                 |       |        |        |        |
-       v                 v       v        v        v        v
-Document              Credit   Fraud    Policy   Loan   Income
-Intake                Risk    Detection Compliance Decision Verification
-Agent                 Agent    Agent      Agent     Agent     Agent
-       |
-       +--> OCR Extraction Agent
-       |
-       +--> Document Verification Agent
-       |
-       +--> Income Verification Agent
-                                 |
-                                 v
-                      Underwriting Decision
-                                 |
-             +-------------------+-------------------+
-             |                   |                   |
-             v                   v                   v
-   Underwriting Audit    Executive Report      Notification
-         Agent                 Agent               Agent
-             |                   |                   |
-             v                   v                   v
-      Audit Records       Executive Report    Status Notifications
-                                 |
-                                 v
-                       Final Workflow Result
+                        React + TypeScript Frontend
+                                     |
+                                     v
+                            FastAPI Backend
+                                     |
+                                     v
+                    Underwriting Coordinator Agent
+                                     |
+        +----------------------------+----------------------------+
+        |                            |                            |
+        v                            v                            v
+Document Processing          Risk & Decision              Agentic AI Copilot
+& Verification                Assessment
+        |                            |                            |
+        v                            v               +-------------+-------------+
+Document Intake Agent      Credit Risk Agent         |                           |
+        |                            |               v                           v
+        v                            v            Groq LLM                 9 Read-Only Tools
+OCR Extraction Agent        Fraud Detection Agent  (tool-calling loop)             |
+        |                            |                          |          +---------+---------+
+        v                            v                          |          |                   |
+Document Verification      Policy Compliance Agent              |          v                   v
+Agent                                |                          |    PostgreSQL           ChromaDB
+        |                            v                          |                           |
+        v                  Loan Decision Agent                   +--------------------------+
+Income Verification                  |                                        |
+Agent                                v                                        v
+        |                  Underwriting Decision                     Copilot Answer
+        +-------------+--------------+                                        |
+                       |
+                       v                                                      v
+        +--------------+--------------+                          Returned to Frontend
+        |              |              |
+        v              v              v
+Underwriting     Executive Report  Notification
+Audit Agent          Agent            Agent
+        |              |              |
+        +--------------+--------------+
+                       v
+              Final Workflow Result
 
-Architecture Notes
-The Underwriting Coordinator Agent orchestrates the complete underwriting workflow.
-The specialized agents perform document processing, verification, risk assessment, fraud detection, compliance checks, and loan decision assessment.
-The Underwriting Audit Agent records and explains important underwriting information.
-The Executive Report Agent generates an executive-level underwriting report.
-The Notification Agent prepares relevant underwriting status notifications.
-The Agentic AI Copilot provides context-aware assistance through LLM reasoning, tool calling, application-data tools, RAG, and ChromaDB.
-The final lending decision is handled by the Loan Decision Agent and is not independently made by the AI Copilot.
-The diagram represents the high-level logical architecture. Actual execution and data flow are implemented in the backend code.
+## Architecture Notes
+
+- The Underwriting Coordinator Agent orchestrates the complete underwriting workflow as a **fixed, sequential Python pipeline** — not a LangGraph state machine and not an LLM-driven planner.
+- The specialized agents perform document processing, verification, risk assessment, fraud detection, compliance checks, and loan decision assessment. **These 11 agents are fully deterministic** — rule-based logic and a scikit-learn RandomForest risk model, with no LLM involved.
+- The Credit Risk Agent's model is trained on a small, hardcoded synthetic dataset for development purposes and is not yet backed by a validated production dataset.
+- The Underwriting Audit Agent records and explains important underwriting information.
+- The Executive Report Agent generates an executive-level underwriting report.
+- The Notification Agent prepares relevant underwriting status notifications.
+- The Agentic AI Copilot is the **only component in the system that calls an LLM**. It provides context-aware assistance through LangChain tool-calling, 9 read-only application-data tools, and RAG retrieval over a ChromaDB vector store of 8 policy documents.
+- The final lending decision is handled by the Loan Decision Agent and is not independently made by the AI Copilot — the Copilot only explains and analyzes, it never approves, rejects, or overrides a decision.
+- The diagram represents the high-level logical architecture. Actual execution and data flow are implemented in the backend code.
 
 6. Project Structure
 Credit-Underwriter-AI/
