@@ -185,11 +185,14 @@ Credit-Underwriter-AI/
 └── README.md
 ```
 
-7. Local Setup
-7.1 Clone the Repository
+## 7. Local Setup
+
+### 7.1 Clone the Repository
+
 git clone https://github.com/saurabhraj0829/Credit-Underwriter-AI.git
 cd Credit-Underwriter-AI
-7.2 Backend Setup
+
+### 7.2 Backend Setup
 
 For Windows PowerShell:
 
@@ -211,7 +214,8 @@ http://127.0.0.1:8000
 FastAPI documentation:
 
 http://127.0.0.1:8000/docs
-7.3 Frontend Setup
+
+### 7.3 Frontend Setup
 
 Open another terminal:
 
@@ -221,7 +225,7 @@ npm run dev
 
 Vite will display the local frontend URL in the terminal.
 
-8. Configuration
+## 8. Configuration
 
 Depending on the enabled features, the application may require:
 
@@ -235,7 +239,7 @@ Keep secrets in local environment variables.
 
 Never commit API keys, passwords, database credentials, or other sensitive configuration values.
 
-9. Testing
+## 9. Testing
 
 The repository includes scripts related to:
 
@@ -244,7 +248,7 @@ Decision governance
 
 Run the applicable tests or scripts according to their implementation and local environment configuration.
 
-10. Security Notes
+## 10. Security Notes
 
 Do not upload real Aadhaar, PAN, salary-slip, bank-statement, or other personally identifiable documents.
 Use synthetic or anonymized documents for development and demonstrations.
