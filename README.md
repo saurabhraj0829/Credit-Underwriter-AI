@@ -156,7 +156,7 @@ Audit Agent          Agent            Agent
 - The diagram represents the high-level logical architecture. Actual execution and data flow are implemented in the backend code.
 ```
 
-## Project Structure
+## 6. Project Structure
 
 ```
 Credit-Underwriter-AI/
@@ -256,7 +256,7 @@ Keep .env files, API keys, credentials, and database secrets out of version cont
 Review access controls before deploying the application.
 Use secure document storage and appropriate access restrictions in production.
 
-11. Current Scope
+## 11. Current Scope
 
 This project demonstrates an integrated credit-underwriting workflow with:
 
@@ -284,7 +284,7 @@ Regulatory and legal review
 Human-in-the-loop approval controls
 Production-grade observability and deployment
 
-12. Future Enhancements
+## 12. Future Enhancements
 
 Docker and Docker Compose deployment
 Role-based access control
@@ -296,7 +296,8 @@ CI/CD automation
 Expanded test coverage
 Improved Agentic AI tool orchestration
 Enhanced RAG knowledge-base management
-13. Author
+
+## 13. Author
 
 Saurabh Raj
 
